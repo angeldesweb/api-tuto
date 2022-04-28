@@ -5,10 +5,9 @@ const api = require('./api');
 const adv = require('./anuncios');
 const router = express.Router();
 
-
 router.get('/', async function (req, res, next) {
   try {
-    const filename = path.join(__dirname, '../README.md');
+    const filename = path.join(__dirname, '../README.md'); // raiz del directorio + README
     const readme = await new Promise((res, rej) => 
       fs.readFile(filename, 'utf8', (err, data) => err ? rej(err) : res(data) )
     );

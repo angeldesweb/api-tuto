@@ -32,9 +32,6 @@ Puedes hacer uso de la api desde un cliente (Postman,Insomnia,etc) con los sigui
 
     GET /anuncios - muestra el listado de anuncios
 
-    POST /anuncio - crea un nuevo anuncio
-
-
 [URL ANUNCIOS](/apiv1/anuncios)
 
 ### Parámetros al realizar petición GET /apiv1/anuncios

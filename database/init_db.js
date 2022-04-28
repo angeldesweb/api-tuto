@@ -17,7 +17,7 @@ const initialize = async () => {
     const docs = Anuncio.find();
     try {
         if(docs.length !== 0) await Anuncio.deleteMany()
-        console.log('DB cleaned');
+        console.log('Se ha depurado la base de datos');
         return;
     } catch (error) {
         console.log(error);
@@ -26,12 +26,11 @@ const initialize = async () => {
 }
 
 (async () => {
-    
     console.log('Configurando base de datos');
     console.log('---------------------------');
     console.log('\n');
     try {
-        await mongoose.connect('mongodb://localhost/nodepop')
+        await mongoose.connect('mongodb://localhost/nodepop');
         await initialize();
         await populateDb();
         return;
@@ -39,4 +38,5 @@ const initialize = async () => {
         console.log(error)
         return;
     }
+    return
 })()

@@ -49,10 +49,6 @@ function normalizePort(val) {
   return false;
 }
 
-/**
- * Event listener for HTTP server "error" event.
- */
-
 function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
@@ -62,19 +58,30 @@ function onError(error) {
     ? 'Pipe ' + port
     : 'Port ' + port;
 
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-    case 'EACCES':
+  const Errors = {
+    'EACCES':() => {
       console.error(bind + ' se requiere elevación');
       process.exit(1);
-      break;
-    case 'EADDRINUSE':
+    },
+    'EADDRINUSE':() => {
       console.error(bind + ' ya se encuentra en uso');
       process.exit(1);
-      break;
-    default:
-      throw error;
+    }
   }
+  const DefaultError = (error) => {throw error}
+  error.code ? Errors[error.code](error) : DefaultError(error);
+//  switch (error.code) {
+//     case 'EACCES':
+//       console.error(bind + ' se requiere elevación');
+//       process.exit(1);
+//       break;
+//     case 'EADDRINUSE':
+//       console.error(bind + ' ya se encuentra en uso');
+//       process.exit(1);
+//       break;
+//     default:
+//       throw error;
+//   }
 }
 
 /**
