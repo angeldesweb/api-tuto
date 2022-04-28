@@ -1,0 +1,30 @@
+[
+    {
+        "titulo":"Silla de oficina",
+        "modo":true,
+        "precio":12,
+        "imagen":"/images/silla.jpg",
+        "tags":["work","lifestyle"]
+    },
+    {
+        "titulo":"Ipad pro",
+        "modo":true,
+        "precio":70,
+        "imagen":"/images/ipad.jpg",
+        "tags":["work","mobile"]      
+    },
+    {
+        "titulo":"Lampara de escritorio",
+        "modo":false,
+        "precio":5,
+        "imagen":"/images/lamp.jpg",
+        "tags":["work","lifestyle"]
+    },
+    {
+        "titulo":"Iphone 11",
+        "modo":false,
+        "precio":12,
+        "imagen":"/images/iphone.jpg",
+        "tags":["work","mobile"]
+    }
+]
